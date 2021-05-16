@@ -22,7 +22,7 @@ class ProfileCreateView(CreateView):
         temp_profile.save()
         return super().form_valid(form)
 
-    def get_successful_url(self):
+    def get_success_url(self):
         return reverse('accountapp:detail', kwargs={'pk': self.object.user.pk})
 
 
@@ -34,5 +34,5 @@ class ProfileUpdateView(UpdateView):
     form_class = ProfileCreationForm
     template_name = 'profileapp/update.html'
 
-    def get_successful_url(self):
-        return reverse('accountapp:detail', kwargs={'pk': self.object.user.pk})
+    def get_success_url(self):
+        return reverse('accountapp:detAail', kwargs={'pk': self.object.user.pk})
