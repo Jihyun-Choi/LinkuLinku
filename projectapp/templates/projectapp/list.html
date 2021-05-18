@@ -26,15 +26,15 @@
     }
 
 </style>
-  {% if article_list %}
-    <div class="container">
-       {% for project in project_list %}
+  {% if project_list %}
+  <div class="container">
+      {% for project in project_list %}
       <a href="{% url 'projectapp:detail' pk=project.pk %}">
         {% include 'snippets/card_project.html' with project=project %}
       </a>
       {% endfor %}
-    </div>
-    <script src="{% static 'js/magicgrid.js' %}"> </script>
+  </div>
+  <script src="{% static 'js/magicgrid.js' %}"> </script>
   {% else %}
   <div class="text-center">
     <h1>No Projects YET!</h1>
