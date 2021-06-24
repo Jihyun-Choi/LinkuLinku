@@ -1,10 +1,13 @@
 <div>
+    <h1>
+        {{ target_article.title }}
+    </h1>
     <img src="{{ article.image.url }}" alt="">
 
-     {% if image2 %}
+     {% if article.image2.url %}
     <img src="{{ article.image2.url }}" alt="">
     {% endif %}
-    {% if image2 %}
+    {% if article.image3.url %}
     <img src="{{ article.image3.url }}" alt="">
     {% endif %}
 </div>

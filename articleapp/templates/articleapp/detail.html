@@ -13,17 +13,23 @@
                 {{ target_article.writer.profile.nickname }}
             </h5>
             <hr>
-
-            <img style="width: 100%; border-radius: 1rem; margin:2rem 0;"
-                    src="{{ target_article.image.url }}" alt="">
-            <img style="width: 100%; border-radius: 1rem; margin:2rem 0;"
-                    src="{{ target_article.image2.url }}" alt="">
-            <img style="width: 100%; border-radius: 1rem; margin:2rem 0;"
-                    src="{{ target_article.image3.url }}" alt="">
-
             <div class="text-left">
                 {{ target_article.content | safe }}
             </div>
+
+            <img style="width: 100%; border-radius: 1rem; margin:2rem 0;"
+                    src="{{ target_article.image.url }}" alt="">
+
+            {% if target_article.image3.url %}
+            <img style="width: 100%; border-radius: 1rem; margin:2rem 0;"
+                    src="{{ target_article.image2.url }}" alt="">
+            {% endif %}
+            {% if target_article.image3.url %}
+            <img style="width: 100%; border-radius: 1rem; margin:2rem 0;"
+                    src="{{ target_article.image3.url }}" alt="">
+            {% endif %}
+
+
 
             {% if target_article.writer == user %}
 
