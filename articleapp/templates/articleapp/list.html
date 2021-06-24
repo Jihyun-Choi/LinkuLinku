@@ -24,15 +24,25 @@
     }
 
     .container img {
-      width: 100%;
+      width: 40%;
     }
 
 </style>
+
+    <div style="text-align: center">
+      <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill mt-3 mb-3 px-3">
+        Create Article
+      </a>
+    </div>
+
 
   {% if article_list %}
     <div class="container">
        {% for article in article_list %}
       <a href="{% url 'articleapp:detail' pk=article.pk %}">
+        <h3>
+        {{ article.title }}{{ article.content | safe }}
+        </h3>
         {% include 'snippets/card.html' with article=article %}
       </a>
       {% endfor %}
@@ -43,13 +53,6 @@
     <h1>No Articles YET!</h1>
   </div>
   {% endif %}
- 
-
-    <div style="text-align: center">
-      <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill mt-3 mb-3 px-3">
-        Create Article
-      </a>
-    </div>
 
 
 {% endblock %}
