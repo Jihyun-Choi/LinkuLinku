@@ -73,14 +73,13 @@ fabric.properties
 #가상환경은 추적할 필요 없으니 무시무시~
 venv/
 
+
+
 .env
 
 db.sqlite3
-
 .idea/
-
 __pycache__/
 /db_backup.sqlite3
-
 media/
 
